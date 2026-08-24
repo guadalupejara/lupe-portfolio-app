@@ -11,7 +11,7 @@ import ResumeEntry from "@/components/ResumeEntry";
 const CONTACT = [
   { icon: faEnvelope, label: "Hellolupejara@gmail.com", href: "mailto:Hellolupejara@gmail.com" },
   { icon: faPhone, label: "(323) 609-5804", href: "tel:+13236095804" },
-  { icon: faLinkedin, label: "LinkedIn", href: "https://linkedin.com/in/lupe-dev" },
+  { icon: faLinkedin, label: "LinkedIn", href: "https://linkedin.com/in/guadalupejara" },
   { icon: faGithub, label: "GitHub", href: "https://github.com/guadalupejara" },
   { icon: faGlobe, label: "Portfolio", href: "/" },
 ];
@@ -189,7 +189,7 @@ export default function ResumePage() {
             </div>
           </div>
           <a
-            href="/lupe-dev-resume.pdf"
+            href="/Lupe_Jara_React_FullStack_Resume.pdf"
             download
             className="inline-flex items-center gap-2 self-start rounded-md bg-accent px-5 py-3 text-sm font-semibold uppercase tracking-wide text-text transition-colors hover:bg-accent-hover"
           >
