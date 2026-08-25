@@ -3,12 +3,12 @@ export type Project = {
   title: string;
   description: string;
   image: string;
+  unoptimized?: boolean;
   tags: string[];
   githubUrl: string;
-  liveUrl?: string;
-  videoUrl?: string;
   featured?: boolean;
-  unoptimized?: boolean; // set true if Next's image optimizer fails on this file
+  liveUrl?: string;
+  hasCat?: boolean; // new
 };
 
 export const PROJECTS: Project[] = [
@@ -29,7 +29,6 @@ export const PROJECTS: Project[] = [
     image: "/profile1.webp",
     tags: ["React", "Bootstrap", "Yup", "Formik", "Brevo", "JavaScript", "Node.js", "C#", ".NET", "SQL", "Figma"],
     githubUrl: "https://github.com/guadalupejara",
-    featured: true,
   },
   {
     slug: "Echos",
@@ -51,15 +50,16 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/guadalupejara/gameHive",
  
   },
-  // {
-  //   slug: "taskflow",
-  //   title: "Taskflow",
-  //   description: "A productivity app for managing tasks and teams efficiently.",
-  //   image: "/corn.jpg",
-  //   tags: ["React", "TypeScript", "Supabase"],
-  //   githubUrl: "https://github.com/lupe-dev/taskflow",
-  //   liveUrl: "https://taskflow-demo.vercel.app",
-  // },
+  {
+    slug: "cat-widget",
+    title: "Cat Widget",
+    description: "A pixel cat that will wander to it's hearts content... on your screen.",
+    image: "/cc.jpg",
+    tags: ["React", "NextJS", "Tailwind CSS"],
+    githubUrl: "https://github.com/guadalupejara/kitty_widget",
+    featured: true,
+    hasCat: true, 
+  },
   // {
   //   slug: "commerce",
   //   title: "Commerce",
