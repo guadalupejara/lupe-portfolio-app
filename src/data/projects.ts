@@ -38,6 +38,7 @@ export const PROJECTS: Project[] = [
     image: "/echo.webp",
     tags: ["React", "JavaScript", "Tailwind CSS", "Vite"],
     githubUrl: "https://github.com/guadalupejara/echos",
+    liveUrl: "https://echos-alpha.vercel.app/",
     featured: true,
     unoptimized: true, 
   },
