@@ -1,8 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
+import ProjectModal from "@/components/ProjectModal";
 import Button from "@/components/Button";
-import { PROJECTS } from "@/data/projects";
+import { PROJECTS, type Project } from "@/data/projects";
 
 export default function ProjectsPage() {
+  const [selected, setSelected] = useState<Project | null>(null);
+
   return (
     <section className="mx-auto max-w-6xl px-6 py-16">
       <h1 className="font-display text-4xl md:text-5xl">Projects</h1>
@@ -10,7 +16,11 @@ export default function ProjectsPage() {
 
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {PROJECTS.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+          <ProjectCard
+            key={project.slug}
+            project={project}
+            onViewDetails={() => setSelected(project)}
+          />
         ))}
       </div>
 
@@ -23,6 +33,10 @@ export default function ProjectsPage() {
           View More Projects on GitHub
         </Button>
       </div>
+
+      {selected && (
+        <ProjectModal project={selected} onClose={() => setSelected(null)} />
+      )}
     </section>
   );
 }
