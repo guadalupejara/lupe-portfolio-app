@@ -1,10 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeaf } from "@fortawesome/free-solid-svg-icons";
 import ProjectCard from "./ProjectCard";
+import ProjectModal from "./ProjectModal";
 import { FEATURED_PROJECTS } from "@/data/projects";
+import type { Project } from "@/data/projects";
 
 export default function FeaturedProjects() {
+  const [selected, setSelected] = useState<Project | null>(null);
+
   return (
     <section className="mx-auto max-w-6xl px-6 py-16">
       <div className="mb-8 flex items-center justify-between">
@@ -22,9 +29,17 @@ export default function FeaturedProjects() {
 
       <div className="grid gap-6 md:grid-cols-3">
         {FEATURED_PROJECTS.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+          <ProjectCard
+            key={project.slug}
+            project={project}
+            onViewDetails={() => setSelected(project)}
+          />
         ))}
       </div>
+
+      {selected && (
+        <ProjectModal project={selected} onClose={() => setSelected(null)} />
+      )}
     </section>
   );
 }

@@ -4,7 +4,13 @@ import Tag from "./Tag";
 import Cats from "@/cat/Cats";
 import type { Project } from "@/data/projects";
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  project,
+  onViewDetails,
+}: {
+  project: Project;
+  onViewDetails?: () => void;
+}) {
   return (
     <div className="overflow-hidden rounded-lg border border-border bg-surface">
       <div className="relative h-60 w-full">
@@ -41,6 +47,15 @@ export default function ProjectCard({ project }: { project: Project }) {
           >
             GitHub →
           </Link>
+
+          {onViewDetails && (
+            <button
+              onClick={onViewDetails}
+              className="font-semibold text-accent hover:text-accent-hover"
+            >
+              View Details
+            </button>
+          )}
 
           {project.liveUrl ? (
             <Link
