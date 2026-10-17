@@ -7,7 +7,7 @@ import type { Project, ProjectType } from "@/data/projects";
 
 const FILTERS: { value: "all" | ProjectType; label: string }[] = [
   { value: "all", label: "All" },
-  { value: "work", label: "Work" },
+  { value: "professional", label: "Professional" },
   { value: "hackathon", label: "Hackathon" },
   { value: "personal", label: "Personal" },
 ];
