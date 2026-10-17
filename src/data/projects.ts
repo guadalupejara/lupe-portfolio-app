@@ -15,7 +15,11 @@ export type Project = {
     keyFeatures: string[];
     whatLearned: string[];
   };
+  type: ProjectType;
+  note?: string;
 };
+
+export type ProjectType = "professional" | "hackathon" | "personal";
 
 export const PROJECTS: Project[] = [
   {
@@ -42,6 +46,7 @@ export const PROJECTS: Project[] = [
     "Deepened my understanding of role-based access control, structuring routes so authenticated and public pages stay properly separated.",
   ],
 }, 
+type: "personal",
   },
   {
     slug: "Resolvely.AI",
@@ -67,6 +72,7 @@ export const PROJECTS: Project[] = [
     "Gained experience coordinating product development using Git, GitHub, Trello, Figma, Slack, and Zoom — including stand-ups, code reviews, and keeping pace with weekly requirements in an agile environment.",
   ],
 },
+  type: "personal",
   },
   {
     slug: "Echos",
@@ -92,6 +98,7 @@ export const PROJECTS: Project[] = [
     "Learned how to build reusable, configurable React components — the same text and background elements adapt as the user clicks through different themes and settings.",
   ],
 },
+  type: "personal",
   },
   {
     slug: "QuizHive",
@@ -116,7 +123,7 @@ export const PROJECTS: Project[] = [
     "Currently a work in progress: the frontend and one complete user flow are built out; next steps are connecting the backend, refining responsive breakpoints, and finalizing the visual theme.",
   ],
 },
- 
+ type: "professional",
   },
   {
     slug: "cat-widget",
@@ -127,6 +134,7 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/guadalupejara/kitty_widget",
     featured: true,
     hasCat: true, 
+    type: "personal",
   },
   // {
   //   slug: "commerce",
