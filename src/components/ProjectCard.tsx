@@ -3,6 +3,7 @@ import Link from "next/link";
 import Tag from "./Tag";
 import Cats from "@/cat/Cats";
 import type { Project } from "@/data/projects";
+import ProjectLabel from "./ProjectLabel";
 
 export default function ProjectCard({
   project,
@@ -28,7 +29,13 @@ export default function ProjectCard({
         )}
       </div>
       <div className="p-5">
-        <h3 className="font-display text-xl">{project.title}</h3>
+        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+  <h3 className="font-display text-xl">
+    {project.title}
+    <span aria-hidden="true" className="ml-2 text-text-muted">·</span>
+  </h3>
+  <ProjectLabel type={project.type} />
+</div>
         <p className="mt-2 text-sm text-text-muted">{project.description}</p>
 
         <div className="mt-4 flex flex-wrap gap-2">

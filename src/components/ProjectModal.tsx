@@ -12,6 +12,7 @@ import {
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Tag from "./Tag";
 import type { Project } from "@/data/projects";
+import ProjectLabel from "./ProjectLabel";
 
 type Tab = "demo" | "notes" | "gallery";
 
@@ -82,7 +83,13 @@ export default function ProjectModal({
         {/* Header */}
         <div className="mb-4 flex items-start justify-between gap-4">
           <div>
-            <h2 className="font-display text-2xl">{project.title}</h2>
+           <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+  <h2 className="font-display text-2xl">
+    {project.title}
+    <span aria-hidden="true" className="ml-2 text-text-muted">·</span>
+  </h2>
+  <ProjectLabel type={project.type} />
+</div>
             <p className="mt-1 text-sm text-text-muted">
               {project.description}
             </p>
