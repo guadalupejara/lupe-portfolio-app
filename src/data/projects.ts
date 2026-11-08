@@ -22,6 +22,35 @@ export type Project = {
 export type ProjectType = "professional" | "hackathon" | "personal";
 
 export const PROJECTS: Project[] = [
+    {
+    slug: "Recoverly",
+    title: "Recoverly",
+    description: "Built a supplier chargeback-recovery app during a week-long hackathon with a team of four. We won 2nd place and the Most Creative Solution award.",
+    image: "/hackathon/recoverly.png",
+    tags: ["TanStack Start", "Supabase", "Tailwind CSS", "Vercel", "Gemini"],
+    githubUrl: "https://github.com/guadalupejara/retailer-resolve",
+    liveUrl: "https://retailer-resolve.vercel.app/",
+    featured: true,
+    unoptimized: true, 
+    videoUrl: "/hackathon/demo1.mp4",
+    gallery: [ "/hackathon/winner.jpg","/hackathon/core3.png","/hackathon/why.png","/hackathon/principles.png","/hackathon/process.png", "/hackathon/core1.png","/hackathon/core2.png","/hackathon/how.png"],
+    notes: {
+ keyFeatures: [
+  "Built a 0–100 readiness score from 8 rule-based checks, applied the same way to every retailer. A fatal miss (missing stamp, missing required documents, amounts that don't reconcile) caps the score at 40, and the raw score stays visible.",
+  "Added deadline alerts that track three clocks per case (retailer filing deadline, carrier proof expiry, retailer response due) and rank each case by the earliest one, so a case with months left to file still shows Critical if the carrier's copy of the proof expires in days.",
+  "Designed a prioritized work queue for Walmart and Amazon that sorts by priority, then dollars, then weakest score, with filters and a recommended next action for each case (fix then submit, submit, accept and write off).",
+  "Used AI (Gemini) only to explain lost points, suggest the fix, and draft the cover note. Rules set the score and the AI can't change it, so the same case always scores the same.",
+  "Required a person for every money decision: analysts approve dispute packets, request missing evidence, and re-score after uploading proof, while write-offs over $1,000 go to a manager.",
+  "Tested the rules engine on 40 mock cases with planted errors (no stamp, wrong PO, blurry scan, expired window), and all 40 matched the expected score and alerts.",
+],
+  whatLearned: [
+    "Built and tested two prototyping approaches: coding from scratch (https://github.com/guadalupejara/team5 & https://team5-ashen.vercel.app/) and generating a site with the AI tool Lovable (https://retailer-resolve.lovable.app/retailers/target).",
+    "Conducted user research with managers and associates at Home Depot, and researched existing products in the market. Consolidated the findings in a FigJam board: https://www.figma.com/board/M4R44oUJJFzJfq7kAg8X8t/Method-Hackaton_Team-5?node-id=0-1&p=f&t=3ehgwpdfQ61EHTOQ-0",
+    "Worked with three teammates to build a team process and develop a solution to the challenge prompt in one week, with mentorship from Method.",
+  ],
+},
+  type: "hackathon",
+  },
   {
     slug: "Mi Casita",
     title: "Mi Casita",
@@ -72,7 +101,7 @@ type: "personal",
     "Gained experience coordinating product development using Git, GitHub, Trello, Figma, Slack, and Zoom — including stand-ups, code reviews, and keeping pace with weekly requirements in an agile environment.",
   ],
 },
-  type: "personal",
+  type: "professional",
   },
   {
     slug: "Echos",
@@ -136,14 +165,6 @@ type: "personal",
     hasCat: true, 
     type: "personal",
   },
-  // {
-  //   slug: "commerce",
-  //   title: "Commerce",
-  //   description: "An e-commerce storefront built with performance in mind.",
-  //   image: "/corn.jpg",
-  //   tags: ["Next.js", "Stripe", "Tailwind CSS"],
-  //   githubUrl: "https://github.com/lupe-dev/commerce",
-  // },
-];
+]
 
 export const FEATURED_PROJECTS = PROJECTS.filter((p) => p.featured);
